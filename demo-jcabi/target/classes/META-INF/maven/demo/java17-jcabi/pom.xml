@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>demo</groupId>
+    <artifactId>java17-jcabi</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>java17-jcabi</name>
+  
+    <parent>
+    	<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-parent</artifactId>
+  		<version>3.0.1</version>
+    </parent>
+
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.springframework.boot</groupId>
+  			<artifactId>spring-boot-starter-web</artifactId>
+  		</dependency>	 
+
+		<!-- jcabi-aspects Maven dependency 
+		https://mvnrepository.com/artifact/com.jcabi/jcabi-aspects-->
+		<dependency>
+		    <groupId>com.jcabi</groupId>
+		    <artifactId>jcabi-aspects</artifactId>
+		    <version>0.24.1</version>
+		</dependency>	
+	
+		<!-- The jcabi-aspects library requires AspectJ runtime support to act -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+
+  	</dependencies>
+  	
+	<!-- jcabi-maven-plugin plugin that weaves the binaries with AspectJ aspects at compile-time. 
+	The plugin provides the ajc goal that does the automatic weaving
+	https://mvnrepository.com/artifact/com.jcabi/jcabi-maven-plugin -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.jcabi</groupId>
+		        <artifactId>jcabi-maven-plugin</artifactId>
+		        <version>0.17.0</version>
+		        <executions>
+		          <execution>
+		            <goals>
+		              <goal>ajc</goal>
+		            </goals>
+		          </execution>
+		        </executions>
+	        </plugin>
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+			    <!--This plugin's configuration is used to store Eclipse m2e settings
+			      only. It has no influence on the Maven build itself. -->
+			    <plugin>
+			      <groupId>org.eclipse.m2e</groupId>
+			      <artifactId>lifecycle-mapping</artifactId>
+			      <version>1.0.0</version>
+			      <configuration>
+			        <lifecycleMappingMetadata>
+			          <pluginExecutions>
+			            <pluginExecution>
+			              <pluginExecutionFilter>
+			                <groupId>com.jcabi</groupId>
+			                <artifactId>jcabi-maven-plugin</artifactId>
+			                <versionRange>[0.0,)</versionRange>
+			                <goals>
+			                  <goal>ajc</goal>
+			                </goals>
+			              </pluginExecutionFilter>
+			              <action>
+			                <execute />
+			              </action>
+			            </pluginExecution>
+			          </pluginExecutions>
+			        </lifecycleMappingMetadata>
+			      </configuration>
+			    </plugin>
+		    </plugins>
+		</pluginManagement>
+	</build>
+  
+</project>
