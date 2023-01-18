@@ -1,6 +1,6 @@
 # AOP-Logging
 
-Demo Repository for AOP-Logging variants.
+Demo Repository for AOP-Logging variants. They both run on Java 17
 
 The demo folders are the project folders, import them as maven projects.
 
