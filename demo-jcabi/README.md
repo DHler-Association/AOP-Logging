@@ -3,9 +3,6 @@
 Vorgefertigte @Loggable Annotations mit ein paar Einstellmöglichkeiten.
 Verwendung durch anpassungen an der pom
 
-> Nötige Anpassungen: https://aspects.jcabi.com/example-weaving.html
-> Allgemeine Informationsquelle: https://aspects.jcabi.com/index.html
-
 # Möglichkeiten
 
 ## Pro Methode
